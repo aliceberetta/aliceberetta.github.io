@@ -82,7 +82,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         margin: 0;
         padding: 0;
         overflow: hidden; 
-        background-color: #fff;
+        background-color: #f0f6f7;
         font-family: 'Helvetica', sans-serif;
     }
 
@@ -166,7 +166,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
-        background-color: white;
+        background-color: #f0f6f7;
     }
 
     #main-footer a {
@@ -191,28 +191,38 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             justify-content: flex-start; /* Centra verticalmente */
             align-items: center;     /* Centra orizzontalmente */
             text-align: center;
+            height: 100vh;    /* Blocca l'altezza della schermata */
+            box-sizing: border-box;
         }
 
         #random-image {
-            max-height: calc(100vh - 200px);
-            max-width: calc(100vw - 40px);
+            max-height: 60vh;;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin-top: 10px;
+            object-fit: contain;       /* Mantiene e proporzioni senza tagliare*/
         }
 
         .overlay { display: none !important; } /* Rimuove hover su mobile */
 
         #mobile-refresh-btn {
             display: block; /* Mostra il tasto sotto la foto */
-            margin: 10px auto;
+            margin: 20px auto;
             font-size: 14px; 
-            letter-spacing: 1.1px;   
+            letter-spacing: 1.1px;
+            flex-shrink: 0;  /* Impedisce al tasto di rimpicciolirsi */   
         }
 
         #main-footer {
+            position: relative;
             padding: 20px;
             flex-direction: column;
             gap: 10px;
             align-items: center; /* Centra i link nel footer */
+            margin-top: auto;
             justify-content: center;
+            padding-bottom: 30px;
         }
     }
 </style>
