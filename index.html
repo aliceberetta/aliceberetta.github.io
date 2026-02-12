@@ -185,13 +185,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
     /* CONFIGURAZIONE MOBILE */
     @media (max-width: 768px) {
+        body, html {
+            overflow: hidden;      /* Elimina ogni possibilità di scroll */
+            height: 100%;
+        }
+
         #home-gallery {
             padding: 10px;
+            display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Centra verticalmente */
             align-items: center;     /* Centra orizzontalmente */
             text-align: center;
-            height: 100vh;    /* Blocca l'altezza della schermata */
+            height: 70vh;    /* Blocca l'altezza della schermata */
             box-sizing: border-box;
         }
 
@@ -207,22 +213,35 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         .overlay { display: none !important; } /* Rimuove hover su mobile */
 
         #mobile-refresh-btn {
-            display: block; /* Mostra il tasto sotto la foto */
-            margin: 20px auto;
+            display: block;    /* Mostra il tasto sotto la foto */
+            position: fixed;
+            top: 72%;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 14px; 
             letter-spacing: 1.1px;
-            flex-shrink: 0;  /* Impedisce al tasto di rimpicciolirsi */   
+            background: none;
+            border: none;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            z-index: 10;
         }
 
         #main-footer {
-            position: relative;
+            position: fixed;
             padding: 20px;
+            display: flex;
             flex-direction: column;
             gap: 10px;
             align-items: center; /* Centra i link nel footer */
             margin-top: auto;
             justify-content: center;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
+        }
+        #main-footer a {
+            font-size: 14px;
+            letter-spacing: 1.1px;
         }
     }
 </style>
